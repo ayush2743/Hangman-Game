@@ -62,11 +62,12 @@ const initGame = (button, clickedLetter) => {
 }
 
 // Creating keyboard buttons and adding event listeners
-for (let i = 97; i <= 122; i++) {
+const qwerty = 'qwertyuiopasdfghjklzxcvbnm';
+for (let i = 0; i < qwerty.length; i++) {
     const button = document.createElement("button");
-    button.innerText = String.fromCharCode(i);
+    button.innerText = qwerty[i];
     keyboardDiv.appendChild(button);
-    button.addEventListener("click", (e) => initGame(e.target, String.fromCharCode(i)));
+    button.addEventListener("click", (e) => initGame(e.target, qwerty[i]));
 }
 
 getRandomWord();
